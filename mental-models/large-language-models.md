@@ -4,41 +4,7 @@
 
 ## Diagram
 
-```mermaid
-flowchart TB
-  classDef concept fill:#4A90A4,stroke:#2C5F6E,stroke-width:2px,color:#fff
-  classDef process fill:#7B68A6,stroke:#4A3D6E,stroke-width:2px,color:#fff
-  classDef example fill:#5DAE8B,stroke:#3D7A5E,stroke-width:2px,color:#fff
-  classDef analogy fill:#D4A574,stroke:#A67B4A,stroke-width:2px,color:#fff
-  llm("Large Language Model")
-  training["Training"]
-  pretraining["Pre-training"]
-  finetuning["Fine-tuning / RLHF"]
-  architecture("Architecture")
-  tokens("Tokens")
-  attention("Attention Mechanism")
-  capabilities("Capabilities")
-  reasoning(["Reasoning & QA"])
-  generation(["Text Generation"])
-  limitations("Limitations")
-  hallucination("Hallucination")
-  context("Context Window")
-  class llm,architecture,tokens,attention,capabilities,limitations,hallucination,context concept
-  class training,pretraining,finetuning process
-  class reasoning,generation example
-  pretraining ==>|followed by| finetuning
-  training -.->|shapes| architecture
-  attention ==>|enables| reasoning
-  tokens ==>|input to| attention
-  hallucination ---|worsens beyond| context
-
-  subgraph Legend
-    L1("Concept"):::concept
-    L2["Process"]:::process
-    L3(["Example"]):::example
-    L4{{"Analogy"}}:::analogy
-  end
-```
+![LLM Mental Model Diagram](https://mermaid.ink/img/Zmxvd2NoYXJ0IFRCCiAgY2xhc3NEZWYgY29uY2VwdCBmaWxsOiM0QTkwQTQsc3Ryb2tlOiMyQzVGNkUsc3Ryb2tlLXdpZHRoOjJweCxjb2xvcjojZmZmCiAgY2xhc3NEZWYgcHJvY2VzcyBmaWxsOiM3QjY4QTYsc3Ryb2tlOiM0QTNENkUsc3Ryb2tlLXdpZHRoOjJweCxjb2xvcjojZmZmCiAgY2xhc3NEZWYgZXhhbXBsZSBmaWxsOiM1REFFOEIsc3Ryb2tlOiMzRDdBNUUsc3Ryb2tlLXdpZHRoOjJweCxjb2xvcjojZmZmCiAgY2xhc3NEZWYgYW5hbG9neSBmaWxsOiNENEE1NzQsc3Ryb2tlOiNBNjdCNEEsc3Ryb2tlLXdpZHRoOjJweCxjb2xvcjojZmZmCiAgbGxtKCJMYXJnZSBMYW5ndWFnZSBNb2RlbCIpCiAgdHJhaW5pbmdbIlRyYWluaW5nIl0KICBwcmV0cmFpbmluZ1siUHJlLXRyYWluaW5nIl0KICBmaW5ldHVuaW5nWyJGaW5lLXR1bmluZyAvIFJMSEYiXQogIGFyY2hpdGVjdHVyZSgiQXJjaGl0ZWN0dXJlIikKICB0b2tlbnMoIlRva2VucyIpCiAgYXR0ZW50aW9uKCJBdHRlbnRpb24gTWVjaGFuaXNtIikKICBjYXBhYmlsaXRpZXMoIkNhcGFiaWxpdGllcyIpCiAgcmVhc29uaW5nKFsiUmVhc29uaW5nICYgUUEiXSkKICBnZW5lcmF0aW9uKFsiVGV4dCBHZW5lcmF0aW9uIl0pCiAgbGltaXRhdGlvbnMoIkxpbWl0YXRpb25zIikKICBoYWxsdWNpbmF0aW9uKCJIYWxsdWNpbmF0aW9uIikKICBjb250ZXh0KCJDb250ZXh0IFdpbmRvdyIpCiAgY2xhc3MgbGxtLGFyY2hpdGVjdHVyZSx0b2tlbnMsYXR0ZW50aW9uLGNhcGFiaWxpdGllcyxsaW1pdGF0aW9ucyxoYWxsdWNpbmF0aW9uLGNvbnRleHQgY29uY2VwdAogIGNsYXNzIHRyYWluaW5nLHByZXRyYWluaW5nLGZpbmV0dW5pbmcgcHJvY2VzcwogIGNsYXNzIHJlYXNvbmluZyxnZW5lcmF0aW9uIGV4YW1wbGUKICBwcmV0cmFpbmluZyA9PT58Zm9sbG93ZWQgYnl8IGZpbmV0dW5pbmcKICB0cmFpbmluZyAtLi0-fHNoYXBlc3wgYXJjaGl0ZWN0dXJlCiAgYXR0ZW50aW9uID09PnxlbmFibGVzfCByZWFzb25pbmcKICB0b2tlbnMgPT0-fGlucHV0IHRvfCBhdHRlbnRpb24KICBoYWxsdWNpbmF0aW9uIC0tLXx3b3JzZW5zIGJleW9uZHwgY29udGV4dAoKICBzdWJncmFwaCBMZWdlbmQKICAgIEwxKCJDb25jZXB0Iik6Ojpjb25jZXB0CiAgICBMMlsiUHJvY2VzcyJdOjo6cHJvY2VzcwogICAgTDMoWyJFeGFtcGxlIl0pOjo6ZXhhbXBsZQogICAgTDR7eyJBbmFsb2d5In19Ojo6YW5hbG9neQogIGVuZA==)
 
 ## Concepts
 

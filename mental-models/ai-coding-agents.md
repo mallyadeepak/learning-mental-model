@@ -4,53 +4,7 @@
 
 ## Diagram
 
-```mermaid
-flowchart TB
-  classDef concept fill:#4A90A4,stroke:#2C5F6E,stroke-width:2px,color:#fff
-  classDef process fill:#7B68A6,stroke:#4A3D6E,stroke-width:2px,color:#fff
-  classDef example fill:#5DAE8B,stroke:#3D7A5E,stroke-width:2px,color:#fff
-  classDef analogy fill:#D4A574,stroke:#A67B4A,stroke-width:2px,color:#fff
-  coding-agents("AI Coding Agents")
-  inline-assistants("Inline Assistants")
-  agentic-cli("Agentic CLI / Terminal Agents")
-  ide-agents("AI-Native IDEs")
-  autonomous-agents("Autonomous Agents")
-  github-copilot(["GitHub Copilot"])
-  cursor(["Cursor"])
-  claude-code(["Claude Code"])
-  codex(["OpenAI Codex CLI"])
-  aws-kiro(["AWS Kiro"])
-  devin(["Devin (Cognition)"])
-  autonomy-spectrum("Autonomy Spectrum")
-  context-window("Context & Codebase Awareness")
-  tool-use["Tool Use"]
-  class coding-agents,inline-assistants,agentic-cli,ide-agents,autonomous-agents,autonomy-spectrum,context-window concept
-  class tool-use process
-  class github-copilot,cursor,claude-code,codex,aws-kiro,devin example
-  coding-agents -->|includes| inline-assistants
-  coding-agents -->|includes| agentic-cli
-  coding-agents -->|includes| ide-agents
-  coding-agents -->|includes| autonomous-agents
-  inline-assistants -->|e.g.| github-copilot
-  ide-agents -->|e.g.| cursor
-  agentic-cli -->|e.g.| claude-code
-  agentic-cli -->|e.g.| codex
-  ide-agents -->|e.g.| aws-kiro
-  autonomous-agents -->|e.g.| devin
-  inline-assistants ---|low autonomy end| autonomy-spectrum
-  autonomous-agents ---|high autonomy end| autonomy-spectrum
-  autonomy-spectrum -.->|depends on| context-window
-  autonomy-spectrum -.->|enabled by| tool-use
-  tool-use ---|exemplified by| claude-code
-  tool-use ---|exemplified by| devin
-
-  subgraph Legend
-    L1("Concept"):::concept
-    L2["Process"]:::process
-    L3(["Example"]):::example
-    L4{{"Analogy"}}:::analogy
-  end
-```
+![AI Coding Agents Diagram](https://mermaid.ink/img/Zmxvd2NoYXJ0IFRCCiAgY2xhc3NEZWYgY29uY2VwdCBmaWxsOiM0QTkwQTQsc3Ryb2tlOiMyQzVGNkUsc3Ryb2tlLXdpZHRoOjJweCxjb2xvcjojZmZmCiAgY2xhc3NEZWYgcHJvY2VzcyBmaWxsOiM3QjY4QTYsc3Ryb2tlOiM0QTNENkUsc3Ryb2tlLXdpZHRoOjJweCxjb2xvcjojZmZmCiAgY2xhc3NEZWYgZXhhbXBsZSBmaWxsOiM1REFFOEIsc3Ryb2tlOiMzRDdBNUUsc3Ryb2tlLXdpZHRoOjJweCxjb2xvcjojZmZmCiAgY2xhc3NEZWYgYW5hbG9neSBmaWxsOiNENEE1NzQsc3Ryb2tlOiNBNjdCNEEsc3Ryb2tlLXdpZHRoOjJweCxjb2xvcjojZmZmCiAgY29kaW5nLWFnZW50cygiQUkgQ29kaW5nIEFnZW50cyIpCiAgaW5saW5lLWFzc2lzdGFudHMoIklubGluZSBBc3Npc3RhbnRzIikKICBhZ2VudGljLWNsaSgiQWdlbnRpYyBDTEkgLyBUZXJtaW5hbCBBZ2VudHMiKQogIGlkZS1hZ2VudHMoIkFJLU5hdGl2ZSBJREVzIikKICBhdXRvbm9tb3VzLWFnZW50cygiQXV0b25vbW91cyBBZ2VudHMiKQogIGdpdGh1Yi1jb3BpbG90KFsiR2l0SHViIENvcGlsb3QiXSkKICBjdXJzb3IoWyJDdXJzb3IiXSkKICBjbGF1ZGUtY29kZShbIkNsYXVkZSBDb2RlIl0pCiAgY29kZXgoWyJPcGVuQUkgQ29kZXggQ0xJIl0pCiAgYXdzLWtpcm8oWyJBV1MgS2lybyJdKQogIGRldmluKFsiRGV2aW4gKENvZ25pdGlvbikiXSkKICBhdXRvbm9teS1zcGVjdHJ1bSgiQXV0b25vbXkgU3BlY3RydW0iKQogIGNvbnRleHQtd2luZG93KCJDb250ZXh0ICYgQ29kZWJhc2UgQXdhcmVuZXNzIikKICB0b29sLXVzZVsiVG9vbCBVc2UiXQogIGNsYXNzIGNvZGluZy1hZ2VudHMsaW5saW5lLWFzc2lzdGFudHMsYWdlbnRpYy1jbGksaWRlLWFnZW50cyxhdXRvbm9tb3VzLWFnZW50cyxhdXRvbm9teS1zcGVjdHJ1bSxjb250ZXh0LXdpbmRvdyBjb25jZXB0CiAgY2xhc3MgdG9vbC11c2UgcHJvY2VzcwogIGNsYXNzIGdpdGh1Yi1jb3BpbG90LGN1cnNvcixjbGF1ZGUtY29kZSxjb2RleCxhd3Mta2lybyxkZXZpbiBleGFtcGxlCiAgY29kaW5nLWFnZW50cyAtLT58aW5jbHVkZXN8IGlubGluZS1hc3Npc3RhbnRzCiAgY29kaW5nLWFnZW50cyAtLT58aW5jbHVkZXN8IGFnZW50aWMtY2xpCiAgY29kaW5nLWFnZW50cyAtLT58aW5jbHVkZXN8IGlkZS1hZ2VudHMKICBjb2RpbmctYWdlbnRzIC0tPnxpbmNsdWRlc3wgYXV0b25vbW91cy1hZ2VudHMKICBpbmxpbmUtYXNzaXN0YW50cyAtLT58ZS5nLnwgZ2l0aHViLWNvcGlsb3QKICBpZGUtYWdlbnRzIC0tPnxlLmcufCBjdXJzb3IKICBhZ2VudGljLWNsaSAtLT58ZS5nLnwgY2xhdWRlLWNvZGUKICBhZ2VudGljLWNsaSAtLT58ZS5nLnwgY29kZXgKICBpZGUtYWdlbnRzIC0tPnxlLmcufCBhd3Mta2lybwogIGF1dG9ub21vdXMtYWdlbnRzIC0tPnxlLmcufCBkZXZpbgogIGlubGluZS1hc3Npc3RhbnRzIC0tLXxsb3cgYXV0b25vbXkgZW5kfCBhdXRvbm9teS1zcGVjdHJ1bQogIGF1dG9ub21vdXMtYWdlbnRzIC0tLXxoaWdoIGF1dG9ub215IGVuZHwgYXV0b25vbXktc3BlY3RydW0KICBhdXRvbm9teS1zcGVjdHJ1bSAtLi0-fGRlcGVuZHMgb258IGNvbnRleHQtd2luZG93CiAgYXV0b25vbXktc3BlY3RydW0gLS4tPnxlbmFibGVkIGJ5fCB0b29sLXVzZQogIHRvb2wtdXNlIC0tLXxleGVtcGxpZmllZCBieXwgY2xhdWRlLWNvZGUKICB0b29sLXVzZSAtLS18ZXhlbXBsaWZpZWQgYnl8IGRldmluCgogIHN1YmdyYXBoIExlZ2VuZAogICAgTDEoIkNvbmNlcHQiKTo6OmNvbmNlcHQKICAgIEwyWyJQcm9jZXNzIl06Ojpwcm9jZXNzCiAgICBMMyhbIkV4YW1wbGUiXSk6OjpleGFtcGxlCiAgICBMNHt7IkFuYWxvZ3kifX06OjphbmFsb2d5CiAgZW5k)
 
 ## Concepts
 
