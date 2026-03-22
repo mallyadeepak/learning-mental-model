@@ -56,6 +56,3 @@ When you parse 'The trophy didn't fit in the suitcase because it was too big', y
 ### Context Window ↔ A whiteboard that gets erased periodically
 
 A person with only a small whiteboard to work on must erase earlier notes to write new ones. An LLM's context window is its working memory — once text falls outside it, the model has no access to it.
-
----
-*Generated on 2026-03-22*

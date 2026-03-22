@@ -69,6 +69,3 @@ A tool with limited context (Copilot autocomplete) is like a new hire writing on
 ### Spec-driven Development (AWS Kiro) ↔ An architect handing blueprints to a construction crew
 
 Kiro asks you to write a spec first (the blueprint), then automatically breaks it into tasks and builds the implementation. Like a construction crew that can't start without approved plans — the upfront spec prevents expensive mid-build surprises.
-
----
-*Generated on 2026-03-22*
