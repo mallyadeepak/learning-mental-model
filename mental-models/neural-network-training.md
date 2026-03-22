@@ -4,48 +4,7 @@
 
 ## Diagram
 
-```mermaid
-flowchart TB
-  classDef concept fill:#4A90A4,stroke:#2C5F6E,stroke-width:2px,color:#fff
-  classDef process fill:#7B68A6,stroke:#4A3D6E,stroke-width:2px,color:#fff
-  classDef example fill:#5DAE8B,stroke:#3D7A5E,stroke-width:2px,color:#fff
-  classDef analogy fill:#D4A574,stroke:#A67B4A,stroke-width:2px,color:#fff
-  nn-training("Neural Network Training")
-  structure("Network Structure")
-  input-layer("Input Layer")
-  hidden-layers("Hidden Layers")
-  output-layer("Output Layer")
-  training-loop["Training Loop"]
-  forward-pass["1. Forward Pass"]
-  loss["2. Calculate Loss"]
-  backprop["3. Backpropagation"]
-  gradient-descent["4. Gradient Descent"]
-  weights("Weights")
-  learning-rate("Learning Rate")
-  epoch("Epoch")
-  class nn-training,structure,input-layer,hidden-layers,output-layer,weights,learning-rate,epoch concept
-  class training-loop,forward-pass,loss,backprop,gradient-descent process
-  nn-training -->|built from| structure
-  nn-training -->|trained via| training-loop
-  nn-training -->|parameterized by| weights
-  structure -->|starts with| input-layer
-  structure -->|learns in| hidden-layers
-  structure -->|ends with| output-layer
-  forward-pass ==>|produces prediction for| loss
-  loss ==>|triggers| backprop
-  backprop ==>|computes gradients for| gradient-descent
-  gradient-descent ==>|updates| weights
-  weights ==>|used in next| forward-pass
-  learning-rate -.->|scales| gradient-descent
-  epoch ---|counts iterations of| training-loop
-
-  subgraph Legend
-    L1("Concept"):::concept
-    L2["Process"]:::process
-    L3(["Example"]):::example
-    L4{{"Analogy"}}:::analogy
-  end
-```
+![Neural Network Training Diagram](https://mermaid.ink/img/Zmxvd2NoYXJ0IFRCCiAgY2xhc3NEZWYgY29uY2VwdCBmaWxsOiM0QTkwQTQsc3Ryb2tlOiMyQzVGNkUsc3Ryb2tlLXdpZHRoOjJweCxjb2xvcjojZmZmCiAgY2xhc3NEZWYgcHJvY2VzcyBmaWxsOiM3QjY4QTYsc3Ryb2tlOiM0QTNENkUsc3Ryb2tlLXdpZHRoOjJweCxjb2xvcjojZmZmCiAgY2xhc3NEZWYgZXhhbXBsZSBmaWxsOiM1REFFOEIsc3Ryb2tlOiMzRDdBNUUsc3Ryb2tlLXdpZHRoOjJweCxjb2xvcjojZmZmCiAgY2xhc3NEZWYgYW5hbG9neSBmaWxsOiNENEE1NzQsc3Ryb2tlOiNBNjdCNEEsc3Ryb2tlLXdpZHRoOjJweCxjb2xvcjojZmZmCiAgbm4tdHJhaW5pbmcoIk5ldXJhbCBOZXR3b3JrIFRyYWluaW5nIikKICBzdHJ1Y3R1cmUoIk5ldHdvcmsgU3RydWN0dXJlIikKICBpbnB1dC1sYXllcigiSW5wdXQgTGF5ZXIiKQogIGhpZGRlbi1sYXllcnMoIkhpZGRlbiBMYXllcnMiKQogIG91dHB1dC1sYXllcigiT3V0cHV0IExheWVyIikKICB0cmFpbmluZy1sb29wWyJUcmFpbmluZyBMb29wIl0KICBmb3J3YXJkLXBhc3NbIjEuIEZvcndhcmQgUGFzcyJdCiAgbG9zc1siMi4gQ2FsY3VsYXRlIExvc3MiXQogIGJhY2twcm9wWyIzLiBCYWNrcHJvcGFnYXRpb24iXQogIGdyYWRpZW50LWRlc2NlbnRbIjQuIEdyYWRpZW50IERlc2NlbnQiXQogIHdlaWdodHMoIldlaWdodHMiKQogIGxlYXJuaW5nLXJhdGUoIkxlYXJuaW5nIFJhdGUiKQogIGVwb2NoKCJFcG9jaCIpCiAgY2xhc3Mgbm4tdHJhaW5pbmcsc3RydWN0dXJlLGlucHV0LWxheWVyLGhpZGRlbi1sYXllcnMsb3V0cHV0LWxheWVyLHdlaWdodHMsbGVhcm5pbmctcmF0ZSxlcG9jaCBjb25jZXB0CiAgY2xhc3MgdHJhaW5pbmctbG9vcCxmb3J3YXJkLXBhc3MsbG9zcyxiYWNrcHJvcCxncmFkaWVudC1kZXNjZW50IHByb2Nlc3MKICBubi10cmFpbmluZyAtLT58YnVpbHQgZnJvbXwgc3RydWN0dXJlCiAgbm4tdHJhaW5pbmcgLS0-fHRyYWluZWQgdmlhfCB0cmFpbmluZy1sb29wCiAgbm4tdHJhaW5pbmcgLS0-fHBhcmFtZXRlcml6ZWQgYnl8IHdlaWdodHMKICBzdHJ1Y3R1cmUgLS0-fHN0YXJ0cyB3aXRofCBpbnB1dC1sYXllcgogIHN0cnVjdHVyZSAtLT58bGVhcm5zIGlufCBoaWRkZW4tbGF5ZXJzCiAgc3RydWN0dXJlIC0tPnxlbmRzIHdpdGh8IG91dHB1dC1sYXllcgogIGZvcndhcmQtcGFzcyA9PT58cHJvZHVjZXMgcHJlZGljdGlvbiBmb3J8IGxvc3MKICBsb3NzID09Pnx0cmlnZ2Vyc3wgYmFja3Byb3AKICBiYWNrcHJvcCA9PT58Y29tcHV0ZXMgZ3JhZGllbnRzIGZvcnwgZ3JhZGllbnQtZGVzY2VudAogIGdyYWRpZW50LWRlc2NlbnQgPT0-fHVwZGF0ZXN8IHdlaWdodHMKICB3ZWlnaHRzID09Pnx1c2VkIGluIG5leHR8IGZvcndhcmQtcGFzcwogIGxlYXJuaW5nLXJhdGUgLS4tPnxzY2FsZXN8IGdyYWRpZW50LWRlc2NlbnQKICBlcG9jaCAtLS18Y291bnRzIGl0ZXJhdGlvbnMgb2Z8IHRyYWluaW5nLWxvb3AKCiAgc3ViZ3JhcGggTGVnZW5kCiAgICBMMSgiQ29uY2VwdCIpOjo6Y29uY2VwdAogICAgTDJbIlByb2Nlc3MiXTo6OnByb2Nlc3MKICAgIEwzKFsiRXhhbXBsZSJdKTo6OmV4YW1wbGUKICAgIEw0e3siQW5hbG9neSJ9fTo6OmFuYWxvZ3kKICBlbmQ=)
 
 ## Concepts
 
@@ -105,6 +64,3 @@ When the final output is wrong, backprop works backwards layer by layer — like
 ### Learning Rate ↔ Adjusting a shower temperature
 
 Too big a turn (high learning rate) and you overshoot from freezing to scalding. Too small (low learning rate) and it takes forever to warm up. The right learning rate finds the comfortable temperature efficiently.
-
----
-*Generated on 2026-03-22*
