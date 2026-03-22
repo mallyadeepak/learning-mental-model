@@ -1,6 +1,6 @@
-# Neural Network Training — Simply Explained with a Mental Model
+# Neural Network Training - Simply Explained with a Mental Model
 
-> A neural network learns by repeatedly making predictions, measuring how wrong it is, and nudging its internal weights to do better. This cycle — forward pass, loss, backpropagation, gradient descent — is the engine behind every modern AI system.
+> A neural network learns by repeatedly making predictions, measuring how wrong it is, and nudging its internal weights to do better. This cycle - forward pass, loss, backpropagation, gradient descent - is the engine behind every modern AI system.
 
 ## Diagram
 
@@ -11,13 +11,13 @@
 - **Neural Network Training** [Concept]
   _The process of adjusting a network's weights by repeatedly showing it examples until it learns to make accurate predictions_
   - **Network Structure** [Concept]
-    _Layers of neurons connected by weights — input, hidden, and output layers_
+    _Layers of neurons connected by weights - input, hidden, and output layers_
     - **Input Layer** [Concept]
-      _Raw data fed into the network — pixels, words, numbers_
+      _Raw data fed into the network - pixels, words, numbers_
     - **Hidden Layers** [Concept]
-      _Where patterns are learned — each neuron applies a weight and activation function_
+      _Where patterns are learned - each neuron applies a weight and activation function_
     - **Output Layer** [Concept]
-      _The final prediction — a class, a number, or the next token_
+      _The final prediction - a class, a number, or the next token_
   - **Training Loop** [Process]
     _The 4-step cycle repeated millions of times to tune the network's weights_
     - **1. Forward Pass** [Process]
@@ -31,9 +31,9 @@
     - **Epoch** [Concept]
       _One full pass through the entire training dataset_
   - **Weights** [Concept]
-    _Tunable numbers on each connection — the memory of the network_
+    _Tunable numbers on each connection - the memory of the network_
     - **Learning Rate** [Concept]
-      _Controls how large each weight adjustment step is — too high diverges, too low crawls_
+      _Controls how large each weight adjustment step is - too high diverges, too low crawls_
 
 ## Relationships
 
@@ -55,11 +55,11 @@
 
 ### Training Loop ↔ Learning to throw darts
 
-You throw (forward pass), see how far off you are (loss), figure out what went wrong — too much wrist, wrong angle (backprop), then adjust slightly next time (gradient descent). After thousands of throws you hit the bullseye consistently.
+You throw (forward pass), see how far off you are (loss), figure out what went wrong - too much wrist, wrong angle (backprop), then adjust slightly next time (gradient descent). After thousands of throws you hit the bullseye consistently.
 
 ### Backpropagation ↔ A manager tracing a bug back through a team
 
-When the final output is wrong, backprop works backwards layer by layer — like a manager asking 'who made this decision?' at each step — assigning blame proportionally to each weight's contribution to the error.
+When the final output is wrong, backprop works backwards layer by layer - like a manager asking 'who made this decision?' at each step - assigning blame proportionally to each weight's contribution to the error.
 
 ### Learning Rate ↔ Adjusting a shower temperature
 
