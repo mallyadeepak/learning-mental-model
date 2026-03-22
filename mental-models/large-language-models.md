@@ -1,4 +1,4 @@
-# Large Language Models (LLM)
+# Large Language Models (LLM) — Simply Explained with a Mental Model
 
 > LLMs are neural networks trained on massive text datasets that learn to predict and generate human-like text. They capture statistical patterns of language to understand context, reason, and produce coherent responses across diverse tasks.
 

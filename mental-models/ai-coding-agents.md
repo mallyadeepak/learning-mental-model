@@ -1,4 +1,4 @@
-# AI Coding Agents
+# AI Coding Agents — From Copilot to Devin, Simply Explained
 
 > AI coding agents are tools powered by large language models that assist developers by understanding, generating, editing, and autonomously executing code. They range from inline autocomplete assistants to fully autonomous agents that can plan, write, test, and ship software independently.
 
